@@ -1,0 +1,193 @@
+html{
+	position: relative;
+}
+
+body{
+	margin-bottom: 120px;
+	margin-top: 30px;
+}
+
+.jumbotron {
+	height: 500px;
+	background-image: url('./image/portfolio.png');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: -230px -120px;
+	overflow: hidden;
+}
+
+.jumbotron h1 {
+	color: #696969;
+	padding-top: 10px;
+}
+.jumbotron p{
+	font-size: 30px;
+	color: #696969;
+	padding: 0.5px ;
+}
+
+
+.jumbotron h1  {
+	text-shadow:  2px 2px 10px rgba(255,255,255,.5);
+
+}
+	
+
+.jumbotron img{
+	width: 200px;
+	border: 5px solid #00ff00;
+	box-shadow: 1px 1px 10px rgba(0,0,0,0.5);
+
+}
+
+hr{
+	width: 50px;
+	border-top: 5px solid lime ;
+
+}
+
+.navbar{
+	
+	font-size: 15px;
+	color: #fff;
+}
+
+
+
+
+.pKiri, .pKanan{
+	color: #000;
+	text-align: justify;
+}
+
+.pKiri, .pKanan{
+	opacity: 0;
+	transform: translate(-50px, 0);
+	transition: 1s;
+}
+
+.pKanan{
+	transform: translate(50px,0 );
+}
+
+.pKiri.pMuncul, .pKanan.pMuncul{
+	opacity: 1;
+	transform: translate(0,0);
+}
+
+section{
+	min-height: 500px;
+	color: #696969;
+}
+
+.portfolio{
+	background-color: #eee;
+}
+
+.portfolio .thumbnail{
+	opacity: 0;	
+	transform: translate(0, -40px);
+	transition: .5s;
+}
+
+.portfolio .thumbnail.muncul{
+	opacity: 1;
+	transform: translate(0,0);
+}
+
+.kontak{
+min-height: 700px;
+
+}
+.kontak label{
+	color: #000;
+}
+
+footer{
+	position: absolute;
+	height: 100px;
+	width: 100%;
+	bottom:0;
+	background-color: #333;
+	padding-top: 30px;
+}
+
+footer p{
+	color: #aaa;
+}
+
+.gambar{
+	max-height: 250px;
+}
+
+/*overlay*/
+
+.overlay{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+	background: rgba(0,0,0,0);
+	z-index: 9999;
+	transition: 1s;
+	text-align: center;
+	padding: 60px 0;
+
+}
+
+.overlay:target{
+	width: auto;
+	height: auto;
+	bottom:0;
+	right: 0;
+	background: rgba(0,0,0,.7);
+
+}
+
+.overlay image{
+	max-height: 100%;
+	box-shadow: 2px 2px 7px rgba(0,0,0,.5);
+}
+
+.overlay:target image{
+	animation: zoomDanFade 1s;
+}
+
+.overlay .close{
+	color: white;
+	background-color: black;
+	border: 1px solid white;
+	opacity: 0;
+
+}
+
+.overlay:target .close{
+	animation: slideDownFade .5s .5s forwards;
+
+}
+
+/*animasi*/
+@keyframes zoomDanFade{
+	0%{
+		transform: scale(0);
+		opacity: 0;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@keyframes slideDownFade{
+	0%{
+		opacity: 0;
+		margin-top: -20px;
+	}
+	100%{
+		opacity: 1;
+		margin-top: 0;
+	}
+}
